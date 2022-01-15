@@ -11,16 +11,17 @@ body {
     align-items: center;
     height: 100vh;
     width: 50vw;
+    background-color: #1F3542;
 }
 
 #game_instructions {
     width: 50vw;
     height: 100vh;
-    background-color: #264653;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #182933;
 }
 
 #reset_button {
@@ -28,24 +29,30 @@ body {
     margin-top: 2em;
     padding: 1em;
     border-radius: 5px;
-    background-color: #264653;
-    color: white;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    background-color: #EEB140;
+    color: black;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px #B17E20;
     transition: all 0.5s ease-in;
 }
 
 #reset_button:hover {
-    background-color: #316f88;
+    background-color: #B17E20;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
+    font-size: 5em;
+    text-transform: uppercase;
+    color: #33C4C0;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2em 0;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    margin: 5px;
 }
 
 .cell {
@@ -53,6 +60,10 @@ h1 {
     height: 50px;
     border: 1px solid black;
     cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #182933;
+    box-shadow: 2px 2px 1px #0F202A;
 }
 
 .logo {
@@ -62,14 +73,20 @@ h1 {
     background-image: url("../img/logo.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .name,
 .firstName {
-    background-color: #264653;
+    background-color: #182933;
     border: 1px solid black;
     color: white;
-
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px #0F202A;
 }
 
 .name {
@@ -83,7 +100,6 @@ h1 {
 .firstName {
     width: 150px;
     height: 50px;
-    background-color: #264653;
     padding-top: 15px;
     padding-left: 15px;
 }
@@ -99,12 +115,12 @@ h1 {
     border: 0.1px solid black;
     text-align: center;
     margin-bottom: 1em;
-    background-color: #f4a261;
+    background-color: #F3B137;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .checked {
-    /* background-image: url("../img/check.png"); */
-    /* background-size: cover; */
     position: relative;
 }
 
@@ -116,14 +132,11 @@ h1 {
     text-align: center;
     top: 9px;
     left: 9px;
-    color: greenyellow;
+    color: #33C4C0;
 }
 
 .unchecked {
-    /* background-image: url("../img/cross.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; */
+
     position: relative;
 }
 
@@ -135,9 +148,28 @@ h1 {
     text-align: center;
     top: 9px;
     left: 13px;
-    color: red;
+    color: #F3B034;
 }
 
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: absolute;
+    background-color: #1F3640;
+    top: 30%;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+}
 
 @media (max-width: 850px) {
     body {

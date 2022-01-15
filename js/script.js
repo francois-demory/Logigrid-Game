@@ -100,7 +100,7 @@ const play = {
     let resetDiv = document.getElementById('game_container');
     let resetButton = document.createElement('button');
     resetButton.id = 'reset_button';
-    resetButton.innerText = 'Réinitialiser';
+    resetButton.innerText = 'RESET';
     resetButton.addEventListener('click', function () {
       play.clear();
     });
@@ -117,10 +117,20 @@ const play = {
       }
     }
     if (solution.join() === play.gameSolution.join()) {
+      let modal = document.createElement('div');
+      modal.className = 'modal';
       let message = document.createElement('h1');
-      message.innerText = 'Vous avez gagné !';
+      message.className = 'modal-content';
+      message.innerText = 'YOU WON !';
+      document.getElementById('game_container').prepend(modal);
       document.getElementById('game_container').prepend(message);
       play.gameOver = true;
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+          message.style.display = 'none';
+        }
+      }
     }
   }
 };
