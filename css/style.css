@@ -183,4 +183,8 @@ h1 {
     #game_instructions {
         width: 100vw;
     }
+
+    .modal-content {
+        top: 125%;
+    }
 }
